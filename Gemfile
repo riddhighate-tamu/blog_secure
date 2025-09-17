@@ -1,19 +1,25 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
+ruby "3.4.5"
 #ruby "2.7.2"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.3"
-#gem "rails", "~> 6.1.2"
+gem 'concurrent-ruby', '1.3.5'
+
+gem 'rails', '~> 8.0.2.1', '>= 8.0.2.1'
+
+# Use postgresql as the database for Active Record
+
+gem 'pg', '~> 1.1'
+
+# Use Puma as the app server
+
+gem 'puma', '~> 6.0'
+
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
-#gem "pg", "~> 12.5"
 
 # Use SCSS for stylesheets
 #gem 'sass-rails', '>= 6'
@@ -25,8 +31,6 @@ gem "pg", "~> 1.1"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 #gem 'turbolinks', '~> 5'
 
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -100,9 +104,12 @@ gem 'rubocop-performance'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'
 
-gem 'devise'
-gem 'omniauth'
+gem 'devise', '~>4.9'
+#gem 'omniauth'
 #gem 'omniauth', '~>2.0'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
+#gem 'omniauth-google-oauth2', '>= 1.0.0'
+#gem 'omniauth-rails_csrf_protection'
+gem "omniauth", "~> 2.1"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "omniauth-google-oauth2", "~> 1.1"
 gem 'record_tag_helper', '~> 1.0'
