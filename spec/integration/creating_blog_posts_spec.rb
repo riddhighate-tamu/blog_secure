@@ -64,8 +64,9 @@ RSpec.describe "CreatingBlogPosts", type: :system do
 
   it 'saves & displays the resulting blog post' do
     # Simulate OAuth login
-    visit '/admins/auth/google_oauth2/callback'
-
+    #visit '/admins/auth/google_oauth2/callback'
+    visit new_admin_session_path
+    click_on "Google"
     # Expect to be redirected to the root path after successful login
     expect(page).to have_current_path(root_path)
 
